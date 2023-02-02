@@ -39,7 +39,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    Greeting("Android")
+//                    Greeting("Android")
                 }
             }
         }
@@ -53,6 +53,12 @@ fun DemoText(message: String, fontSize: Float) {
         fontSize = fontSize.sp,
         fontWeight = FontWeight.Bold
     )
+}
+
+@Preview
+@Composable
+fun DemoTextPreview() {
+    DemoText(message = "Welcome to Android", fontSize = 12f)
 }
 
 // MainActivity 클래스 밖의 액티비티 안에서 첫 번째 컴포저블 함수 선언이 나타난다.
