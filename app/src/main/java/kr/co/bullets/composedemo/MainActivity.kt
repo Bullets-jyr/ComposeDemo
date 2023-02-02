@@ -9,7 +9,9 @@ import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.sp
 import kr.co.bullets.composedemo.ui.theme.ComposeDemoTheme
 
 // 다음으로 MainActivity 클래스는 안드로이드 ComponentActivity 클래스의 서브클래스로 선언된다.
@@ -44,26 +46,35 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+@Composable
+fun DemoText(message: String, fontSize: Float) {
+    Text(
+        text = message,
+        fontSize = fontSize.sp,
+        fontWeight = FontWeight.Bold
+    )
+}
+
 // MainActivity 클래스 밖의 액티비티 안에서 첫 번째 컴포저블 함수 선언이 나타난다.
 // 이 함수의 이름은 Greeting이며, @Composable 애너테이션을 이용해 컴포저블로 표시된다.
 // 이 함수는 문자열 파라미터(name)를 받아 내장 Text 컴포저블을 호출한다. 이때 "Hello" 문자열과 name 파라미터를 통해 받은 값을 전달한다.
 // 이후 튜토리얼을 진행하면서 분명해지겠지만, 컴포저블 함수는 컴포즈를 이용해 안드로이드 앱을 개발하기 위한 기본 빌딩 블록이다.
-@Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!")
-}
+//@Composable
+//fun Greeting(name: String) {
+//    Text(text = "Hello $name!")
+//}
 
 // MainActivity.kt 파일에 선언된 두 번째 컴포저블 함수는 다음과 같다.
 
 // 각각의 미리 보기는 @Preview 애너테이션에 파리미터를 전달해서 구성할 수 있다.
 // 예를 들어, 나머지 표준 안드로이드 화면 데커레이션을 미리 보려면 다음과 같이 미리 보기 애너테이션을 수정한다.
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-    ComposeDemoTheme {
-        Greeting("Android")
-    }
-}
+//@Preview(showBackground = true)
+//@Composable
+//fun DefaultPreview() {
+//    ComposeDemoTheme {
+//        Greeting("Compose")
+//    }
+//}
 
 // 이번 장 앞부분에서 앱을 컴파일 및 실행하지 않아도 미리 보기 패널에서 사용자 인터페이스가 어떻게 표시되는지 확인하는 방법을 설명했다.
 // 미리 보기 랜더링이 onCreate() 메서드의 코드에 의해 생성된다고 가정할 수도 있지만, 사실 이 메서드는 앱이 기기나 에뮬레이터에서 실행될 때만 호출된다.
